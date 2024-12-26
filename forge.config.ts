@@ -14,6 +14,11 @@ import { rendererConfig } from './webpack.renderer.config';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    executableName: "pomodoro",
+    icon: "./src/pomodoro.ico",
+    extraResource: [
+        "./src/pomodoro.ico"
+    ]
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],

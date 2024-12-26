@@ -46,12 +46,17 @@ const createWindow = (): void => {
   mainWindow.setIgnoreMouseEvents(true, { forward: true });
 
   if (!app.isPackaged) {
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
   } else {
     mainWindow.webContents.setDevToolsWebContents(null);
   }
 
-  tray = new Tray("C:\\Users\\Noobgam-Win11\\NoobgamProjects\\windows-widgets\\assets\\noobgam.ico");
+  const iconPath = app.isPackaged
+      ? path.join(__dirname, "..", "..", "..", "pomodoro.ico")
+      : path.join(__dirname, "..", "..", "src", "pomodoro.ico");
+
+  const icon = nativeImage.createFromPath(iconPath);
+  tray = new Tray(icon);
   tray.setToolTip('This is my application.')
   const contextMenu = Menu.buildFromTemplate([
     { label: 'Item1', type: 'normal' },
