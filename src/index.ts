@@ -45,21 +45,17 @@ const createWindow = (): void => {
 
   mainWindow.setIgnoreMouseEvents(true, { forward: true });
 
-  if (!app.isPackaged) {
-    //mainWindow.webContents.openDevTools();
-  } else {
-    mainWindow.webContents.setDevToolsWebContents(null);
-  }
-
   const iconPath = app.isPackaged
-      ? path.join(__dirname, "..", "..", "..", "pomodoro.ico")
-      : path.join(__dirname, "..", "..", "src", "pomodoro.ico");
+      ? path.join(__dirname, "..", "..", "..", "noobgam.ico")
+      : path.join(__dirname, "..", "..", "src", "noobgam.ico");
 
   const icon = nativeImage.createFromPath(iconPath);
   tray = new Tray(icon);
   tray.setToolTip('This is my application.')
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Item1', type: 'normal' },
+    { label: 'Quit', type: 'normal', click: () => {
+        app.quit()
+      }},
   ])
   tray.setContextMenu(contextMenu)
 };

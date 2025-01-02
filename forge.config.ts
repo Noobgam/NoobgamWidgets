@@ -14,10 +14,10 @@ import { rendererConfig } from './webpack.renderer.config';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
-    executableName: "pomodoro",
-    icon: "./src/pomodoro.ico",
+    executableName: "noobgam",
+    icon: "./src/noobgam.ico",
     extraResource: [
-        "./src/pomodoro.ico"
+        "./src/noobgam.ico"
     ]
   },
   rebuildConfig: {},
