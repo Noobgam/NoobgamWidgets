@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blur effect for transparency */
   color: white;
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
