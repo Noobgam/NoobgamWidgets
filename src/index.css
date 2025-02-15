@@ -1,8 +1,13 @@
+html {
+  background: transparent !important;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Blur effect for transparency */
+  background: transparent;
+  opacity: 0.3;
+  backdrop-filter: blur(10px);
   color: white;
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
   overflow: hidden;
@@ -13,4 +18,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: transparent !important;
+  backdrop-filter: blur(10px);
+}
+
+.transparent {
+  background-color: transparent !important;
 }

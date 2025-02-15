@@ -1,6 +1,6 @@
-// import { contextBridge, ipcRenderer } from 'electron';
-//
-// // leaving this as an example. Doesn't really work, we need to somehow do stuff outside of electron.
-// contextBridge.exposeInMainWorld('electronAPI', {
-//     sendDragWindow: (isDragging: boolean) => ipcRenderer.send('drag-window', isDragging),
-// });
+import {contextBridge, ipcRenderer} from 'electron';
+
+contextBridge.exposeInMainWorld('mouseAPI', {
+    // mouseMove sends a message to main. The renderer can call window.mouseAPI.mouseMove({ ignore: true/false })
+    mouseMove: (data: any) => ipcRenderer.send("mouse-move", data)
+});

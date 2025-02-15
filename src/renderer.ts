@@ -30,3 +30,13 @@ import './index.css';
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');// Add this to the end of the existing file
 import './components/App';
+document.addEventListener('mousemove', (e) => {
+    // Get element under mouse.
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    // For the purpose of this example, suppose interactive elements have the class 'interactive'
+    const isInteractive = el && el.classList.contains('interactive');
+
+    // When over interactive area, set ignore to false (capture mouse events);
+    // Otherwise, set ignore to true (allow events pass through)
+    window.mouseAPI.mouseMove({ ignore: !isInteractive });
+});
